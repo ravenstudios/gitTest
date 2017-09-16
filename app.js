@@ -93,7 +93,8 @@ function getNotes() {
     result.push(notes[currentNote % 12])
   }
   displayNotes(result);
-
+  result.pop();//removes last note to be used with modes
+  setModes(result);
 
 }
 
@@ -102,8 +103,7 @@ function getNotes() {
 function displayNotes(array) {
   $("#notes").html(array.toString());
 
-  result.pop();//removes last note to be used with modes
-  setModes(result);
+
 }
 
 function setModes(array) {
