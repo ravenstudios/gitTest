@@ -1,5 +1,5 @@
 console.log(" GIT test");
-let notes = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"];
+let notes = ["A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab"];
 let major =    [0, 2, 2, 1, 2, 2, 2, 1];
 let natMinor = [0, 2, 1, 2, 2, 1, 2, 2];
 let harMinor = [0, 2, 1, 2, 2, 1, 3, 1];
