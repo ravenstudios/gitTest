@@ -3,7 +3,16 @@ let notes = ["A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab"];
 let major =    [0, 2, 2, 1, 2, 2, 2, 1];
 let natMinor = [0, 2, 1, 2, 2, 1, 2, 2];
 let harMinor = [0, 2, 1, 2, 2, 1, 3, 1];
-let scales = [major, natMinor, harMinor];
+let melMinor = [0, 2, 1, 2, 2, 2, 2, 1];
+let pentMajor = [0, 1, 3, 1, 1, 3];
+let pentMinor = [0, 3, 2, 2, 3, 2];
+let pentBlues = [0, 3, 2, 1, 1, 3];
+let pentNatural = [0, 2, 3, 2, 3];
+
+
+
+let scales = [major, natMinor, harMinor, melMinor,
+   pentMajor, pentMinor, pentBlues, pentNatural];
 
 let ionian = {
   name: "Ionian",
@@ -122,8 +131,7 @@ function setModes(array) {
   //   $("#modes").append(modes[i].toString() + "</br>");
   // }
   displayModes();
-  console.log(ionian);
-  console.log(locrian);
+
 }
 function clearModes(){
   for (var i = 0; i < modes.length; i++) {
@@ -155,7 +163,6 @@ function displayModes() {
     html += "<td>" +modes[i].type + "</td><td>"+ modes[i].feel +"</td><td><a target=\"_blank\" href=\"" + link + "\">"+ r + " " + m + " Backing Track Video</a></td></tr>"
   }
   html +="</table>"
-  console.log(html);
   $("#modes").html(html);
 
 
