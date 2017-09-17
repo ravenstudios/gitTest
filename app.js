@@ -66,7 +66,13 @@ let locrian = {
 
 let modes = [ionian, dorian, phrygian, lydian, mixolydian, aeolian, locrian];
 
+let width = $(window).width();
 
+let whiteKeyWidth = 20;
+let whiteKeyHeight = 80;
+let blackKeyWidth = 20;
+let blackKeyHeight = 40;
+let key;
 
 // Ionian	I	T-T-s-T-T-T-s	C-D-E-F-G-A-B-C
 // Dorian	II	T-s-T-T-T-s-T	D-E-F-G-A-B-C-D
@@ -75,10 +81,20 @@ let modes = [ionian, dorian, phrygian, lydian, mixolydian, aeolian, locrian];
 // Mixolydian	V	T-T-s-T-T-s-T	G-A-B-C-D-E-F-G
 // Aeolian	VI	T-s-T-T-s-T-T	A-B-C-D-E-F-G-A
 // Locrian	VII	s-T-T-s-T-T-T	B-C-D-E-F-G-A-B
+function setup(){
+  createCanvas(width, 100);
+  key = new Key(20, 20);
+}
 
+function draw(){
+
+  background(51);
+key.draw();
+}
 
 
 $(function(){
+
   getNotes();
   $("#root").change(()=>{
 
