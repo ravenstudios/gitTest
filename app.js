@@ -66,14 +66,16 @@ let locrian = {
 
 let modes = [ionian, dorian, phrygian, lydian, mixolydian, aeolian, locrian];
 
-let width = $(window).width();
 
-let whiteKeyWidth = 20;
-let whiteKeyHeight = 80;
+
+let whiteKeyWidth = 40;
+let whiteKeyHeight = 160;
 let blackKeyWidth = 20;
-let blackKeyHeight = 40;
+let blackKeyHeight = 95;
 let key;
-
+let keyboard;
+let width = whiteKeyWidth * 14;
+let height = whiteKeyHeight;
 // Ionian	I	T-T-s-T-T-T-s	C-D-E-F-G-A-B-C
 // Dorian	II	T-s-T-T-T-s-T	D-E-F-G-A-B-C-D
 // Phrygian	III	s-T-T-T-s-T-T	E-F-G-A-B-C-D-E
@@ -82,14 +84,20 @@ let key;
 // Aeolian	VI	T-s-T-T-s-T-T	A-B-C-D-E-F-G-A
 // Locrian	VII	s-T-T-s-T-T-T	B-C-D-E-F-G-A-B
 function setup(){
-  createCanvas(width, 100);
-  key = new Key(20, 20);
+  createCanvas(width, height);
+  // key = new Key(20, 20);
+  keyboard = new Keyboard();
+
+}
+
+function update(){
+  keyboard.update();
 }
 
 function draw(){
-
-  background(51);
-key.draw();
+  update();
+  background(255);
+  keyboard.draw();
 }
 
 
@@ -104,6 +112,10 @@ $(function(){
     getNotes();
   });
 
+  $("button").click(function(){
+
+    keyboard.clearKeys();
+  })
 })
 
 
@@ -118,6 +130,7 @@ function getNotes() {
     result.push(notes[currentNote % 12])
   }
   displayNotes(result);
+  keyboard.setKey(result);
   result.pop();//removes last note to be used with modes
   setModes(result);
 
