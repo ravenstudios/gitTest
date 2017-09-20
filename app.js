@@ -107,6 +107,7 @@ $(function(){
   $("#root").change(()=>{
 
     getNotes();
+    chords();
   });
   $("#scale").change(() => {
     getNotes();
@@ -129,6 +130,7 @@ function getNotes() {
     currentNote += scale[i];
     result.push(notes[currentNote % 12])
   }
+
   displayNotes(result);
   keyboard.setKey(result);
   result.pop();//removes last note to be used with modes
@@ -193,6 +195,38 @@ function displayModes() {
   }
   html +="</table>"
   $("#modes").html(html);
+
+
+}
+
+
+function chords(){
+  console.log("chords");
+  let major = [0, 4, 3, 4];
+  let minor = [0, 3, 4, 4];
+  // let fith = [];
+  // let dominant7th = [];
+  // let major7th = [];
+  // let minor7th = [];
+
+
+
+  let result = [];
+  let root = notes.indexOf($("#root").val());;
+  console.log(root);
+  // let scale = scales[$("#scale").val()];
+  let numOfSteps = major.length;
+  let currentNote = root;
+  for (var i = 0; i < numOfSteps; i++) {
+    currentNote += major[i];
+    result.push(notes[currentNote % 12])
+  }
+
+  console.log(result);
+  // displayNotes(result);
+  keyboard.setKey(result);
+  // result.pop();//removes last note to be used with modes
+  // setModes(result);
 
 
 }
