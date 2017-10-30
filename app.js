@@ -84,7 +84,9 @@ let height = whiteKeyHeight;
 // Aeolian	VI	T-s-T-T-s-T-T	A-B-C-D-E-F-G-A
 // Locrian	VII	s-T-T-s-T-T-T	B-C-D-E-F-G-A-B
 function setup(){
-  createCanvas(width, height);
+  let canvas = createCanvas(width, height);
+  canvas.parent("canvas");
+  document.getElementsByClassName("canvas").innerHTML = canvas;
   // key = new Key(20, 20);
   keyboard = new Keyboard();
 

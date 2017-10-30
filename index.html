@@ -2,51 +2,49 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Git Test</title>
-
+    <title>Scales and Modes</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <select id="root">
-      <option value="A">A</option>
-      <option value="Bb">Bb</option>
-      <option value="B">B</option>
-      <option value="C">C</option>
-      <option value="Db">Db</option>
-      <option value="D">D</option>
-      <option value="Eb">Eb</option>
-      <option value="E">E</option>
-      <option value="F">F</option>
-      <option value="Gb">Gb</option>
-      <option value="G">G</option>
-      <option value="Ab">Ab</option>
-  </select>
+    <div class="wrapper">
+      <div class="controles">
+        <select id="root">
+          <option value="A">A</option>
+          <option value="Bb">Bb</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="Db">Db</option>
+          <option value="D">D</option>
+          <option value="Eb">Eb</option>
+          <option value="E">E</option>
+          <option value="F">F</option>
+          <option value="Gb">Gb</option>
+          <option value="G">G</option>
+          <option value="Ab">Ab</option>
+        </select>
 
-  <select  id="scale">
-    <option value="0">Major</option>
-    <option value="1">Natural Minor</option>
-    <option value="2">Harmonic Minor</option>
-    <option value="3">Melodic Minor</option>
-    <option value="4">Pentatonic Major</option>
-    <option value="5">Pentatonic Minor</option>
-    <option value="6">Pentatonic Blues</option>
-    <option value="7">Pentatonic Natural</option>
+        <select  id="scale">
+          <option value="0">Major</option>
+          <option value="1">Natural Minor</option>
+          <option value="2">Harmonic Minor</option>
+          <option value="3">Melodic Minor</option>
+          <option value="4">Pentatonic Major</option>
+          <option value="5">Pentatonic Minor</option>
+          <option value="6">Pentatonic Blues</option>
+          <option value="7">Pentatonic Natural</option>
+        </select>
 
-  </select>
+        <select  id="scaleOrChords">
+          <option value="0">Scales</option>
+          <option value="1">Chords</option>
+        </select>
+      </div>
+      <br>
+      <div id="modes" ></div>
+      <br>
+      <div id="canvas"></div>
+    </div>
 
-  <select  id="scaleOrChords">
-    <option value="0">Scales</option>
-    <option value="1">Chords</option>
-  </select>
-
-
-
-
-  <p id="notes"></p>
-  <div id="modes" ></div>
-
-  <div id="canvas">
-
-  </div>
 
   <script src="libraries/jquery-3.2.1.js" charset="utf-8"></script>
   <script src="libraries/p5.js" charset="utf-8"></script>
@@ -54,16 +52,6 @@
   <script src="keyboard.js" charset="utf-8"></script>
   <script src="app.js" charset="utf-8"></script>
 
-<style media="screen">
-  table, th, td, tr{
-    border-style: solid;
 
-  }
-  .notes{
-
-    font-size:20px;
-
-  }
-</style>
   </body>
 </html>

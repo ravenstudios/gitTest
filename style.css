@@ -1,0 +1,45 @@
+.wrapper{
+  margin: auto;
+
+  background-color: black;
+  border: 5px white solid;
+  width: 1000px;
+}
+
+body{
+  background-color: black;
+}
+.controles{
+  background-color: black;
+  width: 400px;
+  margin: auto;
+  padding-top: 20px;
+
+}
+
+#modes{
+  width: 800px;
+  margin: auto;
+  background-color: black;
+}
+
+#defaultCanvas0{
+  display: block;
+  width: 660px;
+  padding-bottom: 20px;
+  margin-left: 210px;
+}
+select{
+  font-size: 20px;
+}
+
+table, th, td, tr{
+  border-style: solid;
+  background: white;
+
+}
+.notes{
+
+  font-size:20px;
+
+}
